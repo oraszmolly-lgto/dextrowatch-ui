@@ -1,3 +1,4 @@
+/* Global */
 body {
   font-family: Arial, sans-serif;
   background: #f8fafc;
@@ -5,6 +6,7 @@ body {
   padding: 0 20px;
 }
 
+/* Header */
 header {
   background: #2563EB;
   color: white;
@@ -13,39 +15,52 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-
 header h1 { margin: 0; }
 header p { margin: 0; font-size: 14px; }
 .user { font-weight: bold; }
 
-.dashboard, .alerts, .patient-detail {
-  margin-top: 20px;
-}
+/* Sections */
+section { margin-top: 20px; }
 
+/* Dashboard Cards */
 .cards {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
-
 .card {
   background: white;
   padding: 15px;
   border-radius: 12px;
   width: 250px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
 }
-
+.card:hover { transform: scale(1.03); }
 .card.normal { border-left: 6px solid #22C55E; }
 .card.warning { border-left: 6px solid #F59E0B; }
 .card.critical { border-left: 6px solid #EF4444; }
 
+/* Alerts List */
 .alerts ul { list-style: none; padding: 0; }
-.alerts li { background: white; margin-bottom: 10px; padding: 10px; border-radius: 8px; }
+.alerts li { background: white; margin-bottom: 10px; padding: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
 .alerts li.normal { border-left: 6px solid #22C55E; }
 .alerts li.warning { border-left: 6px solid #F59E0B; }
 .alerts li.critical { border-left: 6px solid #EF4444; }
 
+/* Patient Detail */
+.patient-detail .back-btn { margin-bottom: 10px; padding: 5px 10px; }
+.iv-status.normal { color: #22C55E; font-weight: bold; }
+.iv-status.warning { color: #F59E0B; font-weight: bold; }
+.iv-status.critical { color: #EF4444; font-weight: bold; }
+
+.chart { background: #E0F7FA; padding: 10px; margin: 10px 0; border-radius: 8px; }
+
+/* Buttons */
 button { padding: 5px 10px; border: none; border-radius: 6px; cursor: pointer; background: #2563EB; color: white; }
 
-.patient-detail .iv-status.normal { color: #22C55E; font-weight: bold; }
-.patient-detail .chart { background: #E0F7FA; padding: 10px; margin: 10px 0; border-radius: 8px; }
+@media (max-width: 768px) {
+  .cards { flex-direction: column; }
+  .card { width: 100%; }
+}
