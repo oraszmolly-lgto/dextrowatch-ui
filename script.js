@@ -1,3 +1,28 @@
+// Toggle user dropdown menu
+function toggleUserMenu() {
+  const menu = document.getElementById('user-dropdown');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Switch account action
+function switchAccount() {
+  alert("Switch account clicked!");
+}
+
+// Log out action
+function logout() {
+  alert("Logging out...");
+}
+
+// Close dropdown if clicking outside
+window.addEventListener('click', function(e) {
+  const menu = document.getElementById('user-dropdown');
+  if(!e.target.matches('.user-name')) {
+    menu.style.display = 'none';
+  }
+});
+
+
 // Patient Data
 const patients = [
   {name:'Ana Cruz', room:201, level:70, status:'NORMAL'},
