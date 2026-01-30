@@ -9,10 +9,17 @@
 
 <!-- Top Bar -->
 <header>
-  <h1> 💧DextroWatch</h1>
+  <h1>DextroWatch</h1>
   <p>Smart monitoring, safer patients.</p>
-  <div class="user">Nurse Molly 🔔</div>
+  <div class="user-menu">
+    <span class="user-name" onclick="toggleUserMenu()">Nurse Maria ▼</span>
+    <ul class="user-dropdown" id="user-dropdown">
+      <li onclick="switchAccount()">Switch Account</li>
+      <li onclick="logout()">Log Out</li>
+    </ul>
+  </div>
 </header>
+
 
 <!-- Color Meaning (new) -->
 <section class="color-legend">
