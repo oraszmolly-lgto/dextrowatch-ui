@@ -9,12 +9,22 @@
 
 <!-- Top Bar -->
 <header>
-  <h1>DextroWatch</h1>
+  <h1> 💧DextroWatch</h1>
   <p>Smart monitoring, safer patients.</p>
   <div class="user">Nurse Molly 🔔</div>
 </header>
 
-<!-- Dashboard Cards (Part 6) -->
+<!-- Color Meaning (new) -->
+<section class="color-legend">
+  <h2>IV Status Legend</h2>
+  <ul>
+    <li>🟢 <strong>Green:</strong> Normal, IV level sufficient</li>
+    <li>🟡 <strong>Yellow:</strong> Low, IV approaching empty, monitor closely</li>
+    <li>🔴 <strong>Red:</strong> Empty, IV needs replacement immediately </li>
+  </ul>
+</section>
+
+<!-- Dashboard Cards -->
 <section class="dashboard" id="dashboard">
   <h2>IV Status Dashboard</h2>
   <div class="cards">
@@ -39,20 +49,15 @@
   </div>
 </section>
 
-<!-- Alerts Screen (Part 7) -->
+<!-- Alerts (only Yellow & Red) -->
 <section class="alerts" id="alerts">
   <h2>Alerts</h2>
-  <ul>
-    <li class="critical">🔴 Carla Santos | Room 205 | IV 0% | 10:32 AM 
-      <button onclick="acknowledge(this)">Acknowledge</button></li>
-    <li class="warning">🟡 Ben Reyes | Room 203 | IV 25% | 10:20 AM 
-      <button onclick="acknowledge(this)">Acknowledge</button></li>
-    <li class="normal">🟢 Ana Cruz | Room 201 | IV 70% | 10:10 AM 
-      <button onclick="acknowledge(this)">Acknowledge</button></li>
+  <ul id="alert-list">
+    <!-- Alerts will be dynamically added by script.js -->
   </ul>
 </section>
 
-<!-- Patient Detail Screen (Parts 8-12) -->
+<!-- Patient Detail Screen -->
 <section class="patient-detail" id="patient-detail" style="display:none;">
   <button class="back-btn" onclick="backToDashboard()">← Back to Dashboard</button>
   <h2 id="patient-name">Patient Name</h2>
@@ -64,15 +69,14 @@
     <p id="iv-status-label">Status: --</p>
   </div>
 
-  <!-- Historical data placeholder (Part 9) -->
+  <!-- Historical data placeholder -->
   <div class="chart">
     <p>Line chart placeholder (IV Level over Time)</p>
   </div>
 
-  <!-- IV action button (Part 10) -->
+  <!-- IV action button -->
   <button onclick="ivReplaced()">IV Replaced</button>
 
-  <!-- Last updated time (Part 11) -->
   <p class="last-updated" id="last-updated">Last Updated: --:-- AM</p>
 </section>
 
