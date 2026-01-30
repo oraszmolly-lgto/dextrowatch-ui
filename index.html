@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DextroWatch - Nurse Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Top Bar -->
+<header>
+  <h1>DextroWatch</h1>
+  <p>Smart monitoring, safer patients.</p>
+  <div class="user">Nurse Maria 🔔</div>
+</header>
+
+<!-- Dashboard Cards -->
+<section class="dashboard">
+  <h2>IV Status Dashboard</h2>
+  <div class="cards">
+    <div class="card normal">
+      <h3>Ana Cruz</h3>
+      <p>Room 201</p>
+      <p>IV Level: 70%</p>
+      <p>Status: NORMAL</p>
+    </div>
+    <div class="card warning">
+      <h3>Ben Reyes</h3>
+      <p>Room 203</p>
+      <p>IV Level: 25%</p>
+      <p>Status: LOW</p>
+    </div>
+    <div class="card critical">
+      <h3>Carla Santos</h3>
+      <p>Room 205</p>
+      <p>IV Level: 0%</p>
+      <p>Status: EMPTY</p>
+    </div>
+  </div>
+</section>
+
+<!-- Alerts Screen -->
+<section class="alerts">
+  <h2>Alerts</h2>
+  <ul>
+    <li class="critical">🔴 Carla Santos | Room 205 | IV 0% | 10:32 AM <button onclick="acknowledge(this)">Acknowledge</button></li>
+    <li class="warning">🟡 Ben Reyes | Room 203 | IV 25% | 10:20 AM <button onclick="acknowledge(this)">Acknowledge</button></li>
+    <li class="normal">🟢 Ana Cruz | Room 201 | IV 70% | 10:10 AM <button onclick="acknowledge(this)">Acknowledge</button></li>
+  </ul>
+</section>
+
+<!-- Patient Detail Screen -->
+<section class="patient-detail">
+  <h2>Patient Detail - Ana Cruz</h2>
+  <p>Room 201</p>
+  <div class="iv-status normal">
+    <p>IV Level: 70%</p>
+    <p>Status: NORMAL</p>
+  </div>
+  <div class="chart">
+    <p>Line chart placeholder (IV Level over Time)</p>
+  </div>
+  <button onclick="ivReplaced()">IV Replaced</button>
+  <p class="last-updated">Last Updated: 10:32 AM</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

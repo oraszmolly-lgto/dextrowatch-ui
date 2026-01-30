@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  margin: 0;
+  padding: 0 20px;
+}
+
+header {
+  background: #2563EB;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 { margin: 0; }
+header p { margin: 0; font-size: 14px; }
+.user { font-weight: bold; }
+
+.dashboard, .alerts, .patient-detail {
+  margin-top: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card.normal { border-left: 6px solid #22C55E; }
+.card.warning { border-left: 6px solid #F59E0B; }
+.card.critical { border-left: 6px solid #EF4444; }
+
+.alerts ul { list-style: none; padding: 0; }
+.alerts li { background: white; margin-bottom: 10px; padding: 10px; border-radius: 8px; }
+.alerts li.normal { border-left: 6px solid #22C55E; }
+.alerts li.warning { border-left: 6px solid #F59E0B; }
+.alerts li.critical { border-left: 6px solid #EF4444; }
+
+button { padding: 5px 10px; border: none; border-radius: 6px; cursor: pointer; background: #2563EB; color: white; }
+
+.patient-detail .iv-status.normal { color: #22C55E; font-weight: bold; }
+.patient-detail .chart { background: #E0F7FA; padding: 10px; margin: 10px 0; border-radius: 8px; }
