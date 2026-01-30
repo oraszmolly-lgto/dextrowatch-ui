@@ -14,23 +14,23 @@
   <div class="user">Nurse Maria 🔔</div>
 </header>
 
-<!-- Dashboard Cards -->
-<section class="dashboard">
+<!-- Dashboard Cards (Part 6) -->
+<section class="dashboard" id="dashboard">
   <h2>IV Status Dashboard</h2>
   <div class="cards">
-    <div class="card normal">
+    <div class="card normal" onclick="showPatientDetail('Ana Cruz', 201, 70, 'NORMAL')">
       <h3>Ana Cruz</h3>
       <p>Room 201</p>
       <p>IV Level: 70%</p>
       <p>Status: NORMAL</p>
     </div>
-    <div class="card warning">
+    <div class="card warning" onclick="showPatientDetail('Ben Reyes', 203, 25, 'LOW')">
       <h3>Ben Reyes</h3>
       <p>Room 203</p>
       <p>IV Level: 25%</p>
       <p>Status: LOW</p>
     </div>
-    <div class="card critical">
+    <div class="card critical" onclick="showPatientDetail('Carla Santos', 205, 0, 'EMPTY')">
       <h3>Carla Santos</h3>
       <p>Room 205</p>
       <p>IV Level: 0%</p>
@@ -39,29 +39,41 @@
   </div>
 </section>
 
-<!-- Alerts Screen -->
-<section class="alerts">
+<!-- Alerts Screen (Part 7) -->
+<section class="alerts" id="alerts">
   <h2>Alerts</h2>
   <ul>
-    <li class="critical">🔴 Carla Santos | Room 205 | IV 0% | 10:32 AM <button onclick="acknowledge(this)">Acknowledge</button></li>
-    <li class="warning">🟡 Ben Reyes | Room 203 | IV 25% | 10:20 AM <button onclick="acknowledge(this)">Acknowledge</button></li>
-    <li class="normal">🟢 Ana Cruz | Room 201 | IV 70% | 10:10 AM <button onclick="acknowledge(this)">Acknowledge</button></li>
+    <li class="critical">🔴 Carla Santos | Room 205 | IV 0% | 10:32 AM 
+      <button onclick="acknowledge(this)">Acknowledge</button></li>
+    <li class="warning">🟡 Ben Reyes | Room 203 | IV 25% | 10:20 AM 
+      <button onclick="acknowledge(this)">Acknowledge</button></li>
+    <li class="normal">🟢 Ana Cruz | Room 201 | IV 70% | 10:10 AM 
+      <button onclick="acknowledge(this)">Acknowledge</button></li>
   </ul>
 </section>
 
-<!-- Patient Detail Screen -->
-<section class="patient-detail">
-  <h2>Patient Detail - Ana Cruz</h2>
-  <p>Room 201</p>
-  <div class="iv-status normal">
-    <p>IV Level: 70%</p>
-    <p>Status: NORMAL</p>
+<!-- Patient Detail Screen (Parts 8-12) -->
+<section class="patient-detail" id="patient-detail" style="display:none;">
+  <button class="back-btn" onclick="backToDashboard()">← Back to Dashboard</button>
+  <h2 id="patient-name">Patient Name</h2>
+  <p id="patient-room">Room Number</p>
+
+  <!-- IV Status -->
+  <div class="iv-status" id="iv-status">
+    <p id="iv-level">IV Level: --%</p>
+    <p id="iv-status-label">Status: --</p>
   </div>
+
+  <!-- Historical data placeholder (Part 9) -->
   <div class="chart">
     <p>Line chart placeholder (IV Level over Time)</p>
   </div>
+
+  <!-- IV action button (Part 10) -->
   <button onclick="ivReplaced()">IV Replaced</button>
-  <p class="last-updated">Last Updated: 10:32 AM</p>
+
+  <!-- Last updated time (Part 11) -->
+  <p class="last-updated" id="last-updated">Last Updated: --:-- AM</p>
 </section>
 
 <script src="script.js"></script>
